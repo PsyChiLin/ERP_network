@@ -67,22 +67,22 @@ saveHTML({
 
 
 saveGIF({
-  for(i in 1:3){
+  for(i in 1:2){
     par(mfrow=c(2,2))
     # HS
     qgraph(cor(dta_HS_wide[[i]][,-1]),layout = as.matrix(erpR_coord))
-    title(names(dta_HS_wide)[[i]], line = 2.5)
+    title(paste0("Success.High_",names(dta_HS_wide)[[i]]), line = 2.5)
     # HF
     qgraph(cor(dta_HF_wide[[i]][,-1]),layout = as.matrix(erpR_coord))
-    title(names(dta_HF_wide)[[i]], line = 2.5)
+    title(paste0("Failure.High_",names(dta_HF_wide)[[i]]), line = 2.5)
     # LS
     qgraph(cor(dta_LS_wide[[i]][,-1]),layout = as.matrix(erpR_coord))
-    title(names(dta_LS_wide)[[i]], line = 2.5)
+    title(paste0("Success.Low_",names(dta_LS_wide)[[i]]), line = 2.5)
     # LF
     qgraph(cor(dta_LF_wide[[i]][,-1]),layout = as.matrix(erpR_coord))
-    title(names(dta_LF_wide)[[i]], line = 2.5)
+    title(paste0("Failure.Low_",names(dta_LF_wide)[[i]]), line = 2.5)
   }
-},interval = 0.25)
+},interval = 0.25,ani.width = 1600, ani.height=1400,movie.name = "test.gif")
 
 
 
