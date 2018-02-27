@@ -47,9 +47,9 @@ for (i in 1:601){
 
 pos = "firebrick"
 neg = "chartreuse4"
-seq(1, 601, by = 2)
+
 saveGIF({
-  for(i in 1:10){
+  for(i in seq(250, 350, by = 2)){
     par(mfrow=c(2,2))
     # HS
     qgraph(cor(dta_HS_wide[[i]][,-1]),layout = as.matrix(erpR_coord),posCol = pos, negCol = neg)
